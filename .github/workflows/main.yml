@@ -22,7 +22,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        generator: ["Visual Studio 16 2019", Ninja]
+        generator: ["Visual Studio 16 2019"]
 
     steps:
       # Install latest CMake.
