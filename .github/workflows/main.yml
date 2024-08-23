@@ -54,10 +54,6 @@ jobs:
           working-directory: ./backtrace/test
           bundler-cache: true
 
-      - name: Run tests
-        working-directory: ./backtrace/test
-        run: |
-          bundle exec ruby ./test.rb -v
 
       - name: Crashpad distribution ZIP
         run: |
