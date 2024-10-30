@@ -44,8 +44,8 @@ jobs:
 
           # run CMake (additional options like -DCMAKE_EXPORT_COMPILE_COMMANDS=TRUE are possible)
           # it is recommended to specify the compiler version used for the build
-          cmake -S . -B cbuild/ -DCRASHPAD_BUILD_EXAMPLES=TRUE -G "${{ matrix.generator }}" -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=cl.exe -DCMAKE_C_COMPILER=cl.exe
-          cmake --build cbuild/ --config Release
+          cmake -S . -B cbuild/ -DCRASHPAD_BUILD_EXAMPLES=TRUE -G "${{ matrix.generator }}" -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_CXX_COMPILER=cl.exe -DCMAKE_C_COMPILER=cl.exe
+          cmake --build cbuild/ --config RelWithDebInfo
 
 
       - uses: ruby/setup-ruby@v1
