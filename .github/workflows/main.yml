@@ -44,7 +44,7 @@ jobs:
 
           # run CMake (additional options like -DCMAKE_EXPORT_COMPILE_COMMANDS=TRUE are possible)
           # it is recommended to specify the compiler version used for the build
-          cmake -S . -B cbuild/ -DCRASHPAD_BUILD_EXAMPLES=TRUE -G "${{ matrix.generator }}" -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_CXX_COMPILER=cl.exe -DCMAKE_C_COMPILER=cl.exe
+          cmake -S . -B cbuild/ -DCRASHPAD_BUILD_EXAMPLES=TRUE -G "${{ matrix.generator }}" -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_CXX_COMPILER=cl.exe -DCMAKE_C_COMPILER=cl.exe  -DCMAKE_CXX_FLAGS_RELEASE="${CMAKE_CXX_FLAGS_RELEASE} /Zi" -DCMAKE_EXE_LINKER_FLAGS_RELEASE="${CMAKE_EXE_LINKER_FLAGS_RELEASE} /DEBUG /OPT:REF /OPT:ICF"  -DCMAKE_SHARED_LINKER_FLAGS_RELEASE="${CMAKE_SHARED_LINKER_FLAGS_RELEASE} /DEBUG /OPT:REF /OPT:ICF"    
           cmake --build cbuild/ 
 
 
